@@ -39,13 +39,20 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (8.0.0)
+    bcrypt (3.1.13)
     builder (3.2.3)
     byebug (11.0.1)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
     erubi (1.9.0)
+    faker (2.4.0)
+      i18n (~> 1.6.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    graphiql-rails (1.7.0)
+      railties
+      sprockets-rails
+    graphql (1.9.12)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     loofah (2.3.0)
@@ -110,7 +117,11 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   byebug
+  faker
+  graphiql-rails
+  graphql
   pg (>= 0.18, < 2.0)
   puma (~> 3.7)
   rails (~> 5.1.7)
