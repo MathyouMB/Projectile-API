@@ -4,8 +4,8 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.string :title
       t.text :description
       t.string :url
-
       t.timestamps
     end
+    #add_reference :requests, :project, foreign_key: true
   end
 end
