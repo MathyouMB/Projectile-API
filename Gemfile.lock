@@ -70,6 +70,7 @@ GEM
     pg (1.1.4-x64-mingw32)
     puma (3.12.1)
     rack (2.0.7)
+    rack-cors (1.0.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.1.7)
@@ -124,6 +125,7 @@ DEPENDENCIES
   graphql
   pg (>= 0.18, < 2.0)
   puma (~> 3.7)
+  rack-cors
   rails (~> 5.1.7)
   tzinfo-data
 
