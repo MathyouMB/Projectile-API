@@ -1,28 +1,28 @@
-users
+user
 
-    username
-    email
-    password
+    username:string
+    email:string
+    password:string ~ bcrypt
     have many projects
 
 project
 
-    name
-    description
-    repo-url
+    title:string
+    description:text
+    url:string
     have many requests
     have many skills
 
 requests
     
-    title
-    describition
+    title:string
+    describition:text
     belongs to project
     have many skills
 
 skill
 
-    name
-    color
+    name:string
+    color:string
 
 
