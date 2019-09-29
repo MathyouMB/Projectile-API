@@ -1,8 +1,8 @@
 user
 
-    username:string
+    name:string
     email:string
-    password:string ~ bcrypt
+    password | password_digest:string ~ bcrypt
     have many projects
 
 project
