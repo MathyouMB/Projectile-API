@@ -58,3 +58,5 @@ mutation{
   }
 }
 
+::global scope operator, goes to highest scope, finds model instead
+

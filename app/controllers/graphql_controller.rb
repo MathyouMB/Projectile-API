@@ -3,11 +3,7 @@ class GraphqlController < ApplicationController
     variables = ensure_hash(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
-    context = {
-      # Query context goes here, for example:
-      session: session,
-      current_user: current_user
-    }
+    context = {current_user: current_user}
     result = ProjectileSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
   rescue => e
@@ -19,15 +15,17 @@ class GraphqlController < ApplicationController
 
   # gets current user from token stored in the session
   def current_user
-    # if we want to change the sign-in strategy, this is the place to do it
-    return unless session[:token]
+    p("test")
+    header = request.headers[:token] #inheader name the token 'token'
+    p(header)
+    decrypted = JWT.decode(header,Rails.application.secrets.secret_key_base.byteslice(0..31))[0]
+    currentUser = User.find_by(id: decrypted['id'])
+    p(currentUser)
 
-    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.credentials.secret_key_base.byteslice(0..31))
-    token = crypt.decrypt_and_verify session[:token]
-    user_id = token.gsub('user-id:', '').to_i
-    User.find_by id: user_id
-  rescue ActiveSupport::MessageVerifier::InvalidSignature
-    nil
+    currentUser #if you dont expkicitply dont reutrn in ruby you return the last line of thee method
+
+  rescue JWT::DecodeError
+    nil  
   end
 
   # Handle form data, JSON body, or a blank value

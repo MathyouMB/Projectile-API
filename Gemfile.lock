@@ -55,6 +55,7 @@ GEM
     graphql (1.9.12)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
+    jwt (2.2.1)
     loofah (2.3.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -123,6 +124,7 @@ DEPENDENCIES
   faker
   graphiql-rails
   graphql
+  jwt
   pg (>= 0.18, < 2.0)
   puma (~> 3.7)
   rack-cors

@@ -6,7 +6,8 @@ module Mutations
     
       type Types::ProjectType
   
-      def resolve(title: nil, description: nil, url: nil)
+      def resolve(title: nil, description: nil, url: nil) 
+        
         Project.create!(
           title: title,
           description: description,
