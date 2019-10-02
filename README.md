@@ -26,3 +26,35 @@ skill
     color:string
 
 
+create user
+
+mutation{
+  createUser(
+    name: "Matthew"
+    authProvider:{
+      email:{
+        email:"matthew@email.com",
+        password:"123"
+      }
+    }
+  ){
+    id
+    email
+    name
+  }
+}
+
+mutation{
+  signinUser(
+    email:{
+      email:"matthew@email.com",
+      password:"123"
+    }
+  ){
+    token
+    user{
+      id
+    }
+  }
+}
+
