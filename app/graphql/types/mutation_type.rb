@@ -12,7 +12,8 @@ module Types
 
     #crud request mutations
     field :create_request, mutation: Mutations::CreateRequest,description: "Create a new request"
-    
+    field :update_request, mutation: Mutations::UpdateRequest,description: "Update a request"
+    field :delete_request, mutation: Mutations::DeleteRequest,description: "Delete a request"
     
   end
 end
