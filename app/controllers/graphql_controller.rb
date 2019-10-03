@@ -15,12 +15,10 @@ class GraphqlController < ApplicationController
 
   # gets current user from token stored in the session
   def current_user
-    p("test")
+    
     header = request.headers[:token] #inheader name the token 'token'
-    p(header)
     decrypted = JWT.decode(header,Rails.application.secrets.secret_key_base.byteslice(0..31))[0]
     currentUser = User.find_by(id: decrypted['id'])
-    p(currentUser)
 
     currentUser #if you dont expkicitply dont reutrn in ruby you return the last line of thee method
 
