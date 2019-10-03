@@ -9,6 +9,9 @@ module Types
     field :create_project, mutation: Mutations::CreateProject,description: "Create a new project"
     field :update_project, mutation: Mutations::UpdateProject,description: "Update a project"
     field :delete_project, mutation: Mutations::DeleteProject,description: "Delete a project"
+
+    #crud request mutations
+    field :create_request, mutation: Mutations::CreateRequest,description: "Create a new request"
     
     
   end
