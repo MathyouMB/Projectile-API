@@ -9,6 +9,15 @@ module Types
       User.all
     end
 
+    field :user, Types::UserType, null: false do
+      description "Get a specific user"
+      argument :id, ID, required: true
+    end
+
+    def user(id:)
+      User.find(id)
+    end
+
     field :projects, [ProjectType], null: true do
       description "Get all projects"
     end

@@ -60,3 +60,7 @@ mutation{
 
 ::global scope operator, goes to highest scope, finds model instead
 
+
+users has and belongs to many skills
+projects has and belongs to many skills
+requests has and belongs to many skills
