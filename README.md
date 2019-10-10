@@ -66,3 +66,4 @@ projects has and belongs to many skills
 requests has and belongs to many skills
 
 rails g migration CreateJoinTableCategoryProduct category product
+rake db:drop db:create db:migrate db:seed
