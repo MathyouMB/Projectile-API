@@ -64,3 +64,5 @@ mutation{
 users has and belongs to many skills
 projects has and belongs to many skills
 requests has and belongs to many skills
+
+rails g migration CreateJoinTableCategoryProduct category product
