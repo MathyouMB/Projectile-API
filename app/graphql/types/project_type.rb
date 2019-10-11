@@ -7,5 +7,6 @@ module Types
       #field :user_id, ID, null: false
       field :posted_by, UserType, null: true, method: :user
       field :requests,[RequestType], null:false
+      field :skills,[SkillType], null:false
     end
 end

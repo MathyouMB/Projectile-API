@@ -4,6 +4,7 @@ user
     email:string
     password | password_digest:string ~ bcrypt
     have many projects
+    have and belong to many skills
 
 project
 
@@ -11,19 +12,20 @@ project
     description:text
     url:string
     have many requests
-    have many skills
+    have and belong to many skills
 
 requests
     
     title:string
     describition:text
     belongs to project
-    have many skills
+    have and belong to many skills
 
 skill
 
     name:string
     color:string
+    have and belong to many skills
 
 
 create user
@@ -67,3 +69,7 @@ requests has and belongs to many skills
 
 rails g migration CreateJoinTableCategoryProduct category product
 rake db:drop db:create db:migrate db:seed
+
+//end point to add skill to user
+//end point to add skill to project
+//end point to add skill to request

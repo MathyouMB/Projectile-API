@@ -5,5 +5,6 @@ module Types
       field :email, String, null: false
       field :password_digest,String, null:false
       field :projects,[ProjectType], null:false
+      field :skills,[SkillType], null:false
     end
   end
