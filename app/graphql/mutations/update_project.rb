@@ -11,11 +11,6 @@ module Mutations
         def resolve(title:,id:, url:, description:)
            
             project = Project.find(id)
-            p(project)
-            #header = request.headers[:token]
-            #decrypted = JWT.decode(header,Rails.application.secrets.secret_key_base.byteslice(0..31))[0]
-            #currentUser = User.find_by(id: decrypted['id'])
-
             
           if project.update(title: title, url: url, description: description)
             # Successful creation, return the created object with no errors
