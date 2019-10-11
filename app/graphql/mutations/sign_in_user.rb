@@ -9,7 +9,8 @@ module Mutations
     field :user, Types::UserType, null: true
 
     def resolve(email: nil, password: nil)
-      # basic validation
+      
+      #validate if that user event exists
       unless user = User.find_by(email:email)
         return GraphQL::ExecutionError.new("error: no user with that email.");
       end

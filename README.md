@@ -1,75 +1,8 @@
-user
+<h2>About</h2>
 
-    name:string
-    email:string
-    password | password_digest:string ~ bcrypt
-    have many projects
-    have and belong to many skills
-
-project
-
-    title:string
-    description:text
-    url:string
-    have many requests
-    have and belong to many skills
-
-requests
-    
-    title:string
-    describition:text
-    belongs to project
-    have and belong to many skills
-
-skill
-
-    name:string
-    color:string
-    have and belong to many skills
+This repository contains the API for Projectile, a web application that matches developers with open source projects to contribute to. Users can post their projects and make requests for developers with specific skills sets. Users can also search for projects and requests based on their own technical skillset.
 
 
-create user
-
-mutation{
-  createUser(
-    name: "Matthew"
-    authProvider:{
-      email:{
-        email:"matthew@email.com",
-        password:"123"
-      }
-    }
-  ){
-    id
-    email
-    name
-  }
-}
-
-mutation{
-  signinUser(
-    email:{
-      email:"matthew@email.com",
-      password:"123"
-    }
-  ){
-    token
-    user{
-      id
-    }
-  }
-}
-
-::global scope operator, goes to highest scope, finds model instead
 
 
-users has and belongs to many skills
-projects has and belongs to many skills
-requests has and belongs to many skills
 
-rails g migration CreateJoinTableCategoryProduct category product
-rake db:drop db:create db:migrate db:seed
-
-//end point to add skill to user
-//end point to add skill to project
-//end point to add skill to request
