@@ -4,6 +4,8 @@ This repository contains the API for Projectile, a web application that matches 
 
 <img src="https://i.imgur.com/1EUMTag.png"></img>
 
+<h2>Model<h2>
+<img src="https://i.imgur.com/PqeJD8y.png"></img>
 
 
 
