@@ -66,10 +66,13 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.12.2)
     nio4r (2.5.2)
+    nokogiri (1.10.4)
+      mini_portile2 (~> 2.4.0)
     nokogiri (1.10.4-x64-mingw32)
       mini_portile2 (~> 2.4.0)
+    pg (1.1.4)
     pg (1.1.4-x64-mingw32)
-    puma (3.12.1)
+    puma (3.12.3)
     rack (2.0.7)
     rack-cors (1.0.3)
     rack-test (1.1.0)
@@ -116,6 +119,7 @@ GEM
     websocket-extensions (0.1.4)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
@@ -126,7 +130,7 @@ DEPENDENCIES
   graphql
   jwt
   pg (>= 0.18, < 2.0)
-  puma (~> 3.7)
+  puma (~> 3.12)
   rack-cors
   rails (~> 5.1.7)
   tzinfo-data
